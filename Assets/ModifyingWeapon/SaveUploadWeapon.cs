@@ -12,6 +12,8 @@ public class SaveUploadWeapon : MonoBehaviour
 
 
     public GameObject Weapon;
+    public Transform WeaponTransform;
+
     public TMP_Text TitleTextField;
     public Text Describtion;
 
@@ -42,9 +44,14 @@ public class SaveUploadWeapon : MonoBehaviour
         UploadLevelToSteamWorkshop();
     }
 
-    public void LoadModifiedWeapon()
+    public void LoadModifiedWeapon(string fileName)
     {
-        ES3.Load(name, "WeaponModifiedFile.es3");
+        ES3.Load(name, fileName);
+        GameObject a = GameObject.Find(name);
+        a.transform.parent = WeaponTransform;
+        a.transform.localPosition = Vector3.zero;
+        a.transform.localEulerAngles = Vector3.zero;
+
     }
 
     private void UploadLevelToSteamWorkshop()

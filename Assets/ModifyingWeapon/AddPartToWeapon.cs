@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AddPartToWeapon : MonoBehaviour
 {
@@ -34,6 +35,12 @@ public class AddPartToWeapon : MonoBehaviour
             newPart.AddComponent<CubPart>();
         partPosition = newPart.transform.position;
         partsList.Add(newPart);
+    }
+
+
+    public void GoToScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
    
