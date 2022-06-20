@@ -66,8 +66,10 @@ public class SteamWorkshopDownload : MonoBehaviour
                 }
                 else
                 {
+
                     Button button = Instantiate(FirstButton, FirstButton.transform.parent);
                 button.GetComponentInChildren<TMP_Text>().text = listOfCustomLevels[i];
+                    button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => InstantiateProperWeapon(listOfCustomLevels[i]));
 
                 }
