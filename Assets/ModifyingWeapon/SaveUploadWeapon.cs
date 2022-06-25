@@ -1,6 +1,7 @@
 using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -26,6 +27,9 @@ public class SaveUploadWeapon : MonoBehaviour
     private UGCUpdateHandle_t updateHandle;
     string appDataPath;
     string previewPath;
+
+    // screenshoot values
+    private string directoryName = "Screenshots";
 
     private void Start()
     {
@@ -98,8 +102,15 @@ public class SaveUploadWeapon : MonoBehaviour
         SteamFriends.ActivateGameOverlayToWebPage("https://steamcommunity.com/sharedfiles/workshoplegalagreement");
     }
 
+    
+        public void TakeScreenshot()
+        {
+            ScreenCapture.CaptureScreenshot("TestImage.png");
+            DirectoryInfo screenshotDirectory = Directory.CreateDirectory("/ Images");
+            string fullPath = Path.Combine(screenshotDirectory.FullName, "01.jpg");
 
-
+            ScreenCapture.CaptureScreenshot(fullPath);
+        }
 
 
 }
