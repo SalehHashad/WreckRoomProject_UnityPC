@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AddPartToWeapon : MonoBehaviour
 {
-    GameObject Part;
+    public GameObject Part;
 
     Vector3 partPosition;
 
@@ -29,8 +29,8 @@ public class AddPartToWeapon : MonoBehaviour
         }
 
         Vector3 newPosition = new Vector3(partPosition.x,partPosition.y- 0.07f, partPosition.z);
-        GameObject newPart = Instantiate(Part, newPosition,Part.transform.rotation);
-        newPart.transform.parent = Part.transform.parent;
+        GameObject newPart = Instantiate(Part, newPosition,Part.transform.rotation, Part.transform.parent);
+        //newPart.transform.parent = Part.transform.parent;
         if(newPart.GetComponent<CubPart>()==null)
             newPart.AddComponent<CubPart>();
         partPosition = newPart.transform.position;

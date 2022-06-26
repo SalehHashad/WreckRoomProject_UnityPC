@@ -15,7 +15,7 @@ public class SaveUploadWeapon : MonoBehaviour
     public GameObject Weapon;
     public Transform WeaponTransform;
 
-    public TMP_Text TitleTextField;
+    public Text TitleTextField;
     public Text Describtion;
 
 
