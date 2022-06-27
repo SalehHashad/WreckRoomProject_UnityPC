@@ -47,26 +47,31 @@ public class SaveUploadWeapon : MonoBehaviour
 
         CubPart[] cubeArray = FindObjectsOfType<CubPart>();
 
-        fileName = "WeaponModifiedFile" + (cubeArray.Length-2 )+ ".es3";
+        fileName = "WeaponModifiedFile" + (cubeArray.Length)+ ".es3";
         //TitleTextField.text = "Crow Bar  " + (cubeArray.Length - 2);
 
         ES3.Save(weaponName, Weapon, fileName);
-
         UploadLevelToSteamWorkshop();
     }
 
+   
+
     public void LoadModifiedWeapon(List<string> fileNames)
     {
-        foreach (var item in fileNames)
+        GameObject tempgameObject = null ;
+        for (int i = 0; i < fileNames.Count; i++)
         {
-            GameObject loadedObject = ES3.Load(weaponName, item) as GameObject;
-            //GameObject a = GameObject.Find(name);
-            loadedObject.transform.parent = WeaponTransformLoaderHolder;
-            loadedObject.transform.localPosition = Vector3.zero;
-            loadedObject.transform.localEulerAngles = Vector3.zero;
+            Vector3 displacement = new Vector3(WeaponTransformLoaderHolder.position.x, WeaponTransformLoaderHolder.position.y, WeaponTransformLoaderHolder.position.z + (i / 3f));
+            tempgameObject = ES3.Load(weaponName, fileNames[i]) as GameObject;
+            
+                Instantiate(tempgameObject, 
+                    displacement,
+                    WeaponTransformLoaderHolder.rotation, 
+                    WeaponTransformLoaderHolder);
         }
 
-        
+
+        Destroy(tempgameObject);
 
     }
 

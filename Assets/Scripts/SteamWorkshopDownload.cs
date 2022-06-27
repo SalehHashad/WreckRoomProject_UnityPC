@@ -86,7 +86,7 @@ public class SteamWorkshopDownload : MonoBehaviour
 
     void InstantiateProperWeapon(List<string> fileNames)
     {
-        //GetComponent<SaveUploadWeapon>().LoadModifiedWeapon(fileNames);
+       GetComponent<SaveUploadWeapon>().LoadModifiedWeapon(fileNames);
     }
 
     
