@@ -11,7 +11,7 @@ public class SteamWorkshopDownload : MonoBehaviour
 {
     bool installedStuff;
     uint folderSize;
-    public Button FirstButton;
+    //public Button FirstButton;
     private List<string> listOfCustomLevels = new List<string>();
     private string path;
 
@@ -55,34 +55,38 @@ public class SteamWorkshopDownload : MonoBehaviour
                 {
                     listOfCustomLevels.Add(tempFile);  //Make a string that concats all the files so that we can assign it to the scrollView
                 }
+               
             }
+
+            InstantiateProperWeapon(listOfCustomLevels);
+
             //scrollBoiText.text = listOfCustomLevels;
-            for (int i = 0; i < listOfCustomLevels.Count; i++)
-            {
-                if (i == 0)
-                {
-                    FirstButton.GetComponentInChildren<TMP_Text>().text = listOfCustomLevels[0];
-                    FirstButton.onClick.AddListener(() => InstantiateProperWeapon(listOfCustomLevels[0]));
-                }
-                else
-                {
+            //for (int i = 0; i < listOfCustomLevels.Count; i++)
+            //{
+            //    if (i == 0)
+            //    {
+            //        FirstButton.GetComponentInChildren<TMP_Text>().text = listOfCustomLevels[0];
+            //        FirstButton.onClick.AddListener(() => InstantiateProperWeapon(listOfCustomLevels[0]));
+            //    }
+            //    else
+            //    {
 
-                    Button button = Instantiate(FirstButton, FirstButton.transform.parent);
-                button.GetComponentInChildren<TMP_Text>().text = listOfCustomLevels[i];
-                    button.onClick.RemoveAllListeners();
-                button.onClick.AddListener(() => InstantiateProperWeapon(listOfCustomLevels[i]));
+            //        Button button = Instantiate(FirstButton, FirstButton.transform.parent);
+            //    button.GetComponentInChildren<TMP_Text>().text = listOfCustomLevels[i];
+            //        button.onClick.RemoveAllListeners();
+            //    button.onClick.AddListener(() => InstantiateProperWeapon(listOfCustomLevels[i]));
 
-                }
+            //    }
 
-                int x = 0;
-            }
+            //    int x = 0;
+            //}
         }
     }
 
 
-    void InstantiateProperWeapon(string fileName)
+    void InstantiateProperWeapon(List<string> fileNames)
     {
-        GetComponent<SaveUploadWeapon>().LoadModifiedWeapon(fileName);
+        //GetComponent<SaveUploadWeapon>().LoadModifiedWeapon(fileNames);
     }
 
     

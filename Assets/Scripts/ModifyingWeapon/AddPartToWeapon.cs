@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,8 @@ public class AddPartToWeapon : MonoBehaviour
     public GameObject Part;
 
     Vector3 partPosition;
+
+    public TMP_Text UploadFeedBack_text;
 
     List<GameObject> partsList = new List<GameObject>();
     void Start()
@@ -18,6 +21,8 @@ public class AddPartToWeapon : MonoBehaviour
 
    public void AddPartButton_Click()
     {
+        UploadFeedBack_text.text = "";
+
         if (partsList.Count > 4)
         {
             partPosition = Part.transform.position;
