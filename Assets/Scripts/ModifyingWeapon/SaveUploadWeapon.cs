@@ -38,6 +38,9 @@ public class SaveUploadWeapon : MonoBehaviour
 
     private void Start()
     {
+        string path = Path.Combine(Application.persistentDataPath + "/Images");
+        Directory.CreateDirectory(path);
+
         weaponName = Weapon.name;
     }
 
