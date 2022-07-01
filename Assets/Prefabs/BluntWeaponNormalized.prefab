@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 1813432850080826504}
   - component: {fileID: 8368848436010560197}
   - component: {fileID: 9142958846748522077}
+  - component: {fileID: 7856626711392737580}
   m_Layer: 0
   m_Name: BluntWeaponNormalized
   m_TagString: Untagged
@@ -212,8 +213,8 @@ Transform:
   m_GameObject: {fileID: 6892996424297058890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 12898753683565694}
   - {fileID: 2216193671458032614}
@@ -247,6 +248,11 @@ MonoBehaviour:
     - {fileID: 11500000, guid: 77dbe74f0338a6c438b0af580dd1253e, type: 3}
     - {fileID: 9142958846748522077}
     - {fileID: 11500000, guid: f1a0e712065e5ec4484d6ca15e0f4563, type: 3}
+    - {fileID: 7856626711392737580}
+    - {fileID: 11500000, guid: bb138fd2e7814b38be218571e904049c, type: 3}
+    - {fileID: 7593359269756301157}
+    - {fileID: 11500000, guid: 79cd113ec3a24073b5bab8cbfb533d1e, type: 3}
+    - {fileID: 607684489972963247}
     - {fileID: 10609517994754778}
     - {fileID: 12898753683565694}
     - {fileID: 24190990331439120}
@@ -267,13 +273,7 @@ MonoBehaviour:
     - {fileID: 11500000, guid: 7737b083a4a391b49adfccaf05aeb91e, type: 3}
     - {fileID: 6647101334036322312}
     - {fileID: 6894921194194861785}
-    - {fileID: 607684489972963247}
-    - {fileID: 11500000, guid: 96d1b667b6234620a01e126539c3f6d8, type: 3}
-    - {fileID: 11400000, guid: 11dfb42cd26dd7740865deba9566c654, type: 2}
-    - {fileID: 11500000, guid: dc30735a6f974fda88a33f70e2b17a3b, type: 3}
-    - {fileID: 7593359269756301157}
-    - {fileID: 11500000, guid: 79cd113ec3a24073b5bab8cbfb533d1e, type: 3}
-    _Values: 1b9e16806a238c442e553fcb20b5f7413cea96a1f66491527857154f3a3d704c008b3477247fbb4013bcdc0008fb1e49ff71898336d40b1980de7cb4c242902423ad2c30b0255e1a34496af097ae457d39cb4fc8b4ec162c964df703fc70022f94b40dbda09ee16601af3f880f7ee739265a1f6d8d8791170170af25a1f4a4480dc3ecb516cfa43437a6cdcff47f5141035d7b9b4423c50cdd0942efb2f9f70953877a4c92312257b6eaa43355610b7f206d28ff70408d1603206de0ed6c183dafc4237cfa9dd32ec6db1aa5806d483ed54823a531116726ed91b01396e57e2e99ff7bf6f2c8703769ff3a01e29ee95a4c9ac4dfd2ebae4a3276b5459d29c34f303763041307dd63b95a3d31d765434da9565f30aa5e00515030c37c122b996e3d76cde5fd129245449e67d3d71fdd67
+    _Values: 1b9e16806a238c442e553fcb20b5f7413cea96a1f66491527857154f3a3d704c008b3477247fbb4013bcdc0008fb1e49ff71898336d40b1980de7cb4c242902423ad2c30b0255e1a34496af097ae457d39cb4fc8b4ec162c964df703fc70022f0fdd66c5e96edf22e132b19401e19e1f3d76cde5fd129245449e67d3d71fdd67303763041307dd6394b40dbda09ee16601af3f880f7ee739265a1f6d8d8791170170af25a1f4a4480dc3ecb516cfa43437a6cdcff47f5141035d7b9b4423c50cdd0942efb2f9f70953877a4c92312257b6eaa43355610b7f206d28ff70408d1603206de0ed6c183dafc4237cfa9dd32ec6db1aa5806d483ed54823a531116726ed91b01396e57e2e99ff7bf6f2c8703769ff3a01e29ee95a4c9ac4dfd2ebae4a3276b5459d29c34f
 --- !u!136 &2046858651814897415
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -314,10 +314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebc937e678155e4d86feeb9248cca97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GrabBehaviour: 2
+  GrabBehaviour: 0
   PoseType: 0
   TrackingType: 0
-  HoldType: 2
+  HoldType: 1
   GrabControl: 0
   OverrideGrabTrigger: 0
   GrabTrigger: 0
@@ -469,6 +469,23 @@ MonoBehaviour:
   COMGizmoSize: {x: 0.02, y: 0.02, z: 0.02}
   LiveUpdate: 0
   Rigidbody: {fileID: 1813432850080826504}
+--- !u!114 &7856626711392737580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892996424297058890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb138fd2e7814b38be218571e904049c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrabPoints:
+  - {fileID: 7593359269756301157}
+  RotateAxis: 
+  SwapTime: 0.2
+  OtherHands: []
 --- !u!1001 &5863316057197640948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -476,9 +493,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1363568996589287497}
     m_Modifications:
+    - target: {fileID: 1076642507964547629, guid: 436637525524f6c44b0a2a01101e4240, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076642507964547629, guid: 436637525524f6c44b0a2a01101e4240, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076642507964547629, guid: 436637525524f6c44b0a2a01101e4240, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076642507964547629, guid: 436637525524f6c44b0a2a01101e4240, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076642507964547629, guid: 436637525524f6c44b0a2a01101e4240, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076642507964547629, guid: 436637525524f6c44b0a2a01101e4240, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 2972123606479591976, guid: 436637525524f6c44b0a2a01101e4240, type: 3}
       propertyPath: m_Name
       value: GrabPoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053141695601415057, guid: 436637525524f6c44b0a2a01101e4240, type: 3}
+      propertyPath: IsLineGrab
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5737355601065965330, guid: 436637525524f6c44b0a2a01101e4240, type: 3}
       propertyPath: m_RootOrder
