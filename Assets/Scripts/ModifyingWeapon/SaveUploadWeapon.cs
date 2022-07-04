@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,8 +15,8 @@ public class SaveUploadWeapon : MonoBehaviour
     public GameObject Weapon;
     public Transform WeaponTransformLoaderHolder;
 
-    public Text TitleTextField;
-    public Text Describtion;
+    public TMP_Text TitleTextField;
+    public TMP_Text Describtion;
 
     public RenderTexture rendertexture;
 
@@ -61,20 +60,21 @@ public class SaveUploadWeapon : MonoBehaviour
 
     public void LoadModifiedWeapon(List<string> fileNames)
     {
-        GameObject tempgameObject = null ;
+        
         for (int i = 0; i < fileNames.Count; i++)
         {
-            Vector3 displacement = new Vector3(WeaponTransformLoaderHolder.position.x, WeaponTransformLoaderHolder.position.y, WeaponTransformLoaderHolder.position.z + (i / 3f));
-            tempgameObject = ES3.Load(weaponName, fileNames[i]) as GameObject;
+            Vector3 displacement = new Vector3(WeaponTransformLoaderHolder.position.x, WeaponTransformLoaderHolder.position.y, WeaponTransformLoaderHolder.position.z + (i / 2f));
+            var tempgameObject = ES3.Load(weaponName, fileNames[i]);
             
-                Instantiate(tempgameObject, 
+                Instantiate(tempgameObject as GameObject, 
                     displacement,
                     WeaponTransformLoaderHolder.rotation, 
                     WeaponTransformLoaderHolder);
+            Destroy(tempgameObject as GameObject);
         }
 
 
-        Destroy(tempgameObject);
+       
 
     }
 
@@ -138,8 +138,8 @@ public class SaveUploadWeapon : MonoBehaviour
         RenderTexture.active = null;
         var bytes = tex.EncodeToPNG();
         System.IO.File.WriteAllBytes(path, bytes);
-        AssetDatabase.ImportAsset(path);
-        Debug.Log($"Saved texture: {rt.width}x{rt.height} - " + path);
+        //AssetDatabase.ImportAsset(path);
+        //Debug.Log($"Saved texture: {rt.width}x{rt.height} - " + path);
     }
 
     //public void TakeScreenshot()

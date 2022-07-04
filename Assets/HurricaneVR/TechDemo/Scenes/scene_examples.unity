@@ -7064,6 +7064,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 316953855}
     m_Modifications:
+    - target: {fileID: 75816233042696186, guid: e76b000d3626e294cad55ca93a191510, type: 3}
+      propertyPath: PreviewLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 75816233042696186, guid: e76b000d3626e294cad55ca93a191510, type: 3}
+      propertyPath: PreviewRight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 75816233042696186, guid: e76b000d3626e294cad55ca93a191510, type: 3}
+      propertyPath: LeftHandPreview
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 75816233042696186, guid: e76b000d3626e294cad55ca93a191510, type: 3}
+      propertyPath: RightHandPreview
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2441304306611542165, guid: e76b000d3626e294cad55ca93a191510, type: 3}
       propertyPath: m_Name
       value: crow_bar
